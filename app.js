@@ -1,6 +1,10 @@
 const express = require("express");
 const path = require("path");
+
 const bodyParser = require("body-parser");
+
+//sequlize import
+const sequelize = require("./utils/database");
 
 const app = express();
 const userRoutes = require("./routes/user");
@@ -27,4 +31,10 @@ app.use("/admin", (req, res, next) => {
 app.use(userRoutes);
 app.use("/admin", adminRoutes);
 
-app.listen(8080);
+sequelize
+  .sync()
+  .then((result) => {
+    console.log(result);
+    app.listen(8080);
+  })
+  .catch((err) => console.log(err));

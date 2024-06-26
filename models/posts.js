@@ -1,22 +1,25 @@
-const db = require("../utils/database");
-module.exports = class Post {
-  constructor(title, description, image_url) {
-    this.title = title;
-    this.description = description;
-    this.image_url = image_url;
-  }
-  setPost() {
-    return db.execute(
-      "INSERT INTO posts (title,description,image_url) VALUES (?,?,?)",
-      [this.title, this.description, this.image_url]
-    );
-  }
+const Sequelize = require("sequelize");
 
-  static getAllPost() {
-    return db.execute("SELECT * FROM posts");
-  }
+const sequelize = require("../utils//database");
 
-  static getSinglePost(id) {
-    return db.execute("SELECT * FROM posts WHERE posts.id = ?", [id]);
-  }
-};
+const PostModel = sequelize.define("post", {
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true,
+  },
+  title: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  description: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  imgUrl: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
+module.exports = PostModel;
