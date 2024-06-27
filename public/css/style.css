@@ -32,9 +32,10 @@
 
 .p-bg {
     border: 1px solid rgb(0, 0, 0);
-    margin: 10px 20px;
-    width: auto;
-    height: 28vh;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 50%;
+    height: auto;
     padding: 20px 20px;
 }
 
@@ -47,7 +48,7 @@
 
 .p-des {
     font-size: 15px;
-    margin: 10px 10px;
+    margin: 40px 10px;
 }
 
 .form-bg {
@@ -109,30 +110,39 @@
 
 .see {
     text-decoration: none;
+    text-align: center;
     background-color: rgb(97, 120, 167);
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     font-weight: 200;
-    float: right;
+    margin: 10px 10px;
 }
 
 .details h1 {
     text-align: center;
     margin: 20px 0;
 }
-.img-bg{
+
+.img-bg {
     display: flex;
     margin: auto;
 }
+
 .details img {
-    width: 80%;
+    width: 50%;
     margin: auto;
     object-fit: cover;
 }
-.details p{
-font-size: 17px;
-text-align: justify;
+
+.details p {
+    font-size: 17px;
+    text-align: justify;
+}
+
+.ctr-btn {
+    display: flex;
+    justify-content: space-between;
 }

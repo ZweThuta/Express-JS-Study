@@ -17,15 +17,15 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/post", (req, res, next) => {
-  console.log("Post Middleware");
+  // console.log("Post Middleware");
   next();
 });
 app.use((req, res, next) => {
-  console.log("Parent Middleware");
+  // console.log("Parent Middleware");
   next();
 });
 app.use("/admin", (req, res, next) => {
-  console.log("Admin Middleware approved");
+  // console.log("Admin Middleware approved");
   next();
 });
 app.use(userRoutes);

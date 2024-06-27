@@ -21,7 +21,13 @@
         <p>
             <%= post.description %>
         </p>
-        
+        <hr>
+        <div class="ctr-btn">
+        <form action="/admin/post/<%= post.id %>" method="post">
+            <button class="post-btn">Delete</button>
+        </form> <br> <br>
+        <a href="/admin/post-edit/<%= post.id %>" class="post-btn edit-btn" >Edit</a>
+         </div>
     </section>
 </body>
-</html>
+</html> 
