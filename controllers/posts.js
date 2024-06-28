@@ -1,8 +1,8 @@
 const { where } = require("sequelize");
-const Post = require("../models/posts");
+const Post = require("../models/post");
 exports.createPost = (req, res) => {
   const { title, description, foto } = req.body;
-  Post.create({
+  req.user.createPost({
     title,
     description,
     imgUrl: foto,
@@ -44,7 +44,7 @@ exports.deletePost = (req, res) => {
       if (!post) {
         res.redirect("/");
       }
-      return post.destroy();
+      return post.destroy(); 
     })
     .then((result) => {
       console.log("Post is deleted.");
